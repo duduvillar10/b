@@ -1,6 +1,8 @@
 var express = require("express");
 var app = express();
 
+const mySecret = process.env['MESSAGE_STYLE']
+
 //console.log("Hello World");
 
 // app.get("/", (req, res) => {
@@ -12,11 +14,11 @@ const publicPath = __dirname + "/public/";
 
 app.use("/public", express.static(publicPath));
 
-app.get("/", (req, res) => {
-  res.sendFile(absolutePath);
-});
+// app.get("/", (req, res) => {
+//   res.sendFile(absolutePath);
+// });
 
-app.get("/json", (req, res) => {
+app.get("/", (req, res) => {
   if (process.env.MESSAGE_STYLE === "uppercase") {
     return res.json({ message: "HELLO JSON" });
   } else {

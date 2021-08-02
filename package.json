@@ -1,6 +1,9 @@
 {
 	"name": "fcc-learn-node-with-express",
-	"version": "0.1.0",
+	"author": "Jane Doe",
+	"version": "1.2.0",
+	"license": "MIT",
+	"description": "A project that does something awesome",
 	"dependencies": {
 		"express": "^4.14.0",
 		"body-parser": "^1.15.2",
