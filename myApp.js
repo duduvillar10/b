@@ -1,8 +1,7 @@
 var express = require("express");
+var mongoose = require("mongoose");
 var app = express();
 var bodyParser = require("body-parser");
-
-const mySecret = process.env['MESSAGE_STYLE']
 
 //console.log("Hello World");
 
@@ -95,6 +94,9 @@ app.get("/api/:date",(req,res,next) => {
   res.json({unix: req.time.getTime(), utc: req.time.toUTCString()});
 
 })
+
+
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 module.exports = app;
